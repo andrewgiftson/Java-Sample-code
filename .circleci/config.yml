@@ -1,13 +1,10 @@
 version: 2.1
 jobs:
- build:
-   docker:
+  build:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
      # specify the version you desire here
      - image: circleci/openjdk:8-jdk
   steps:
-         - checkout
-
-         workflows:
-           maven_test:
-             jobs:
-               - maven/test
+    - checkout
