@@ -32,6 +32,14 @@ jobs:
               sudo apt-get install google-chrome-unstable
 
       - run:
+            name: Running X virtual framebuffer
+            command: Xvfb :0 -ac &
+
+      - run:
+            name: Run Tests
+            command: |
+                    export DISPLAY=:99
+      - run:
           name: Test
           command: mvn test
 
