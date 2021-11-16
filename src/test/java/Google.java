@@ -11,7 +11,7 @@ public class Google {
     public WebDriver driver;
    @BeforeTest
  public void setup(){
-      System.setProperty("webdriver.chrome.driver", "./chromedriver");
+      System.setProperty("webdriver.chrome.driver", "");
      driver=new ChromeDriver();
      driver.manage().window().maximize();
      driver.get("https://www.google.co.in/");
