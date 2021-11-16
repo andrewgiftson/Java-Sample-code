@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -13,7 +14,8 @@ public class Google {
  public void setup(){
      System.out.println("User directory is - "+System.getProperty("user.dir"));
      //System.setProperty("webdriver.chrome.driver", "/home/circleci/project/chromedriver");
-     driver=new ChromeDriver();
+     //driver=new ChromeDriver();
+       ChromeOptions options = new ChromeOptions();
      driver.manage().window().maximize();
      driver.get("https://www.google.co.in/");
    }
