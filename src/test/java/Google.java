@@ -11,8 +11,8 @@ public class Google {
     public WebDriver driver;
    @BeforeTest
  public void setup(){
-       System.out.println("User directory is - "+System.getProperty("user.dir"));
-       System.setProperty("webdriver.chrome.driver", "");
+     System.out.println("User directory is - "+System.getProperty("user.dir"));
+     System.setProperty("webdriver.chrome.driver", "chromedriver");
      driver=new ChromeDriver();
      driver.manage().window().maximize();
      driver.get("https://www.google.co.in/");
