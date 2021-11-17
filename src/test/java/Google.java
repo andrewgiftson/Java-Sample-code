@@ -17,13 +17,6 @@ public class Google {
     public WebDriver driver;
    @BeforeTest
  public void setup() throws MalformedURLException {
-//     System.out.println("User directory is - "+System.getProperty("user.dir"));
-//    System.setProperty("webdriver.chrome.driver", "/home/circleci/project/src/test/resources/chromedriver.exe");
-//
-//     driver=new ChromeDriver();
-//
-//     driver.manage().window().maximize();
-//     driver.get("https://www.google.co.in/");
        DesiredCapabilities capabilities = new DesiredCapabilities();
        capabilities.setBrowserName("chrome");
        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub" ), capabilities);

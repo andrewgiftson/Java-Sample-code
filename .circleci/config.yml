@@ -14,8 +14,7 @@ jobs:
     docker:
       - image: cimg/openjdk:11.0
       - image: selenium/standalone-chrome:3.11.0
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+
 
 
     steps:
@@ -25,7 +24,7 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
-            # fallback to using the latest cache if no exact match is found
+
             - v1-dependencies-
 
       - run:
@@ -48,8 +47,7 @@ jobs:
           name: Run Tests
           command:
             mvn test
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+
 workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
