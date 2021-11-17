@@ -41,7 +41,6 @@ jobs:
       - run:
           name: Use ChromeDriver found in repository
           command: |
-#            sudo chmod 777 /home/circleci/circleCiTesting/src/test/resources/chromedriver.exe
             sudo chmod 777 /home/circleci/project/src/test/resources/chromedriver.exe
             sudo apt-get install libxi6 libgconf-2-4
             sudo apt-get -y install xvfb gtk2-engines-pixbuf
