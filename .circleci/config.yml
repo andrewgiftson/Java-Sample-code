@@ -63,7 +63,7 @@ jobs:
 
       - run:
                      name: Start Selenium
-                     command: java -jar selenium-server-standalone-3.5.3.jar
+                     command: java -jar selenium-server-standalone-3.5.3.jar -role hub
                      background: true
       # run tests!
       - run:
