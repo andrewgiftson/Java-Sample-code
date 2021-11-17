@@ -29,7 +29,8 @@ public class Google {
        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub" ), capabilities);
    }
    @Test
-    public void testGoogleSearch(){
+    public void testGoogleSearch() throws InterruptedException {
+      Thread.sleep(1000);
        driver.findElement(By.xpath("//input[@name='q' and @type='text']")).sendKeys("Selenium");
        driver.findElement(By.xpath("//input[@name='q' and @type='text']")).sendKeys(Keys.ENTER);
        String link=driver.findElement(By.xpath("(//div[@class='yuRUbf']/a)[1]")).getAttribute("href");
