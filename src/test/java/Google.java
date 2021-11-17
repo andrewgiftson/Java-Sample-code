@@ -27,6 +27,7 @@ public class Google {
        DesiredCapabilities capabilities = new DesiredCapabilities();
        capabilities.setBrowserName("chrome");
        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub" ), capabilities);
+       driver.get("https://www.google.co.in/");
    }
    @Test
     public void testGoogleSearch() throws InterruptedException {
