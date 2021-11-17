@@ -13,10 +13,10 @@ public class Google {
    @BeforeTest
  public void setup(){
      //System.out.println("User directory is - "+System.getProperty("user.dir"));
-     System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    // System.setProperty("webdriver.chrome.driver", "chromedriver");
-       ChromeOptions options = new ChromeOptions();
-     driver=new ChromeDriver(options);
+    // System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+      // ChromeOptions options = new ChromeOptions();
+     driver=new ChromeDriver();
      //
      driver.manage().window().maximize();
      driver.get("https://www.google.co.in/");
