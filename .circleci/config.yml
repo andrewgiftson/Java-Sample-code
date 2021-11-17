@@ -13,6 +13,7 @@ jobs:
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
       - image: cimg/openjdk:11.0
+      - image: selenium/standalone-chrome:3.11.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
 
@@ -32,39 +33,16 @@ jobs:
           command: mvn dependency:go-offline
 
       - run:
-          name: Install latest version of Chrome
-          command: |
-            sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-            sudo apt-get update
-            sudo apt-get -y install google-chrome-stable
-      - run:
-          name: Use ChromeDriver found in repository
-          command: |
-            sudo chmod 777 /home/circleci/project/src/test/resources/chromedriver.exe
-            sudo apt-get install libxi6 libgconf-2-4
-            sudo apt-get -y install xvfb gtk2-engines-pixbuf
-            sudo apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
-            sudo apt-get install xvfb
-            sudo apt-get -y install imagemagick x11-apps
-      - run:
-          name: Test Setup
-          command: |
-            Xvfb :0 -ac &
-            export DISPLAY=:99
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
-      - run: mkdir test-reports
-      - run:
-               name: Download Selenium
-               command: wget  http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+          name: create docker network
+          command: docker network create grid
 
       - run:
-                     name: Start Selenium
-                     command: java -jar selenium-server-standalone-3.5.3.jar -role hub
-                     background: true
+                name: install selenium-hub
+                command: docker run -d --rm -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.11.0
+
+      - run:
+                name: install selenium-node
+                command: docker run -d --rm --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0
       # run tests!
       - run:
           name: Run Tests

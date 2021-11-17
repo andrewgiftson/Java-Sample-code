@@ -25,7 +25,7 @@ public class Google {
 //     driver.manage().window().maximize();
 //     driver.get("https://www.google.co.in/");
        DesiredCapabilities capabilities = new DesiredCapabilities();
-       capabilities.setCapability("browserName", "chrome");
+       capabilities.setBrowserName("chrome");
        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub" ), capabilities);
    }
    @Test
