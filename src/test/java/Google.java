@@ -12,8 +12,8 @@ public class Google {
     public WebDriver driver;
    @BeforeTest
  public void setup(){
-     System.out.println("User directory is - "+System.getProperty("user.dir"));
-     //System.setProperty("webdriver.chrome.driver", "/home/circleci/project/chromedriver");
+     //System.out.println("User directory is - "+System.getProperty("user.dir"));
+     System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
      driver=new ChromeDriver();
      //  ChromeOptions options = new ChromeOptions();
      driver.manage().window().maximize();
