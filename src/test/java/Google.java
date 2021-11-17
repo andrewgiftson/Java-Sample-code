@@ -12,8 +12,8 @@ public class Google {
     public WebDriver driver;
    @BeforeTest
  public void setup(){
-     //System.out.println("User directory is - "+System.getProperty("user.dir"));
-    System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\chromedriver.exe");
+     System.out.println("User directory is - "+System.getProperty("user.dir"));
+    System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
    // System.setProperty("webdriver.chrome.driver", "src//test//resources//chromedriver.exe");
    // System.setProperty("webdriver.chrome.driver", "chromedriver");
       // ChromeOptions options = new ChromeOptions();
