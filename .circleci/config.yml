@@ -15,15 +15,22 @@ jobs:
       - image: cimg/openjdk:11.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      # Checkout the code as the first step.
-      - checkout
+
       # Use mvn clean and package as the standard maven build phase
       #      - run:
       #          name: Build
       #          command: mvn -B -DskipTests clean package
       #      # Then run your tests!
-
+   steps:
+         - checkout
+  - run: mkdir test-reports
+  - run:
+      name: Download Selenium
+      command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+  - run:
+      name: Start Selenium
+      command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+      background: true
 
       - run:
           name: Test
