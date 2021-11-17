@@ -30,7 +30,7 @@ jobs:
             sudo sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
             sudo apt-get update
             sudo apt-get install google-chrome-unstable
-        - run:
+      - run:
                 name: Install latest version of ChromeDriver Sample
                 command: |
                   sudo wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip
@@ -42,15 +42,15 @@ jobs:
                   sudo apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
                   sudo apt-get install xvfb
                   sudo apt-get -y install imagemagick x11-apps
-        - run:
+      - run:
                 name: Running X virtual framebuffer
                 command: Xvfb :0 -ac &
 
-        - run:
+      - run:
                 name: Run Tests
                 command: |
                   export DISPLAY=:99
-        - save_cache:
+      - save_cache:
                 paths:
                   - ~/.m2
                 key: v1-dependencies-{{ checksum "pom.xml" }}
