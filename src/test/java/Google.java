@@ -13,7 +13,7 @@ public class Google {
    @BeforeTest
  public void setup(){
      System.out.println("User directory is - "+System.getProperty("user.dir"));
-    System.setProperty("webdriver.chrome.driver", "/home/circleci/project/src/test/resources/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/home/circleci/project/src/test/resources/chromedriver.exe");
    // System.setProperty("webdriver.chrome.driver", "src//test//resources//chromedriver.exe");
    // System.setProperty("webdriver.chrome.driver", "chromedriver");
       // ChromeOptions options = new ChromeOptions();
