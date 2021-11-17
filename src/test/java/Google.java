@@ -14,7 +14,7 @@ public class Google {
  public void setup(){
      //System.out.println("User directory is - "+System.getProperty("user.dir"));
     // System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-     System.setProperty("webdriver.chrome.driver", "/home/circleci/project/chromedriver");
+     System.setProperty("webdriver.chrome.driver", "chromedriver");
        ChromeOptions options = new ChromeOptions();
      driver=new ChromeDriver(options);
      //
