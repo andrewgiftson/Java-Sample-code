@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-17T18:16:24 IST" name="Suite" finished-at="2021-11-17T18:16:45 IST" duration-ms="21038">
+  <suite started-at="2021-11-18T14:07:04 IST" name="Suite" finished-at="2021-11-18T14:07:25 IST" duration-ms="20961">
     <groups>
     </groups>
-    <test started-at="2021-11-17T18:16:24 IST" name="TestName1" finished-at="2021-11-17T18:16:45 IST" duration-ms="21038">
+    <test started-at="2021-11-18T14:07:04 IST" name="TestName1" finished-at="2021-11-18T14:07:25 IST" duration-ms="20961">
       <class name="Google">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-17T18:16:24 IST" name="setup" finished-at="2021-11-17T18:16:45 IST" duration-ms="20971" status="FAIL">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-18T14:07:04 IST" name="setup" finished-at="2021-11-18T14:07:25 IST" duration-ms="20911" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[Could not start a new session. Response code 500. Message: Timed out waiting for driver server to start.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'SUGUNADEVI', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
 Driver info: driver.version: unknown
 Build info: version: '4.0.0', revision: '3a21814679'
@@ -22,7 +22,7 @@ Capabilities {}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Timed out waiting for driver server to start.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'SUGUNADEVI', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
 Driver info: driver.version: unknown
 Build info: version: '4.0.0', revision: '3a21814679'
@@ -39,7 +39,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:168)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:146)
-at Google.setup(Google.java:29)
+at Google.setup(Google.java:22)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -74,11 +74,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testGoogleSearch()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-17T18:16:45 IST" name="testGoogleSearch" finished-at="2021-11-17T18:16:45 IST" duration-ms="0" status="SKIP">
+        <test-method signature="testGoogleSearch()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-18T14:07:25 IST" name="testGoogleSearch" finished-at="2021-11-18T14:07:25 IST" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
               <![CDATA[Could not start a new session. Response code 500. Message: Timed out waiting for driver server to start.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'SUGUNADEVI', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
 Driver info: driver.version: unknown
 Build info: version: '4.0.0', revision: '3a21814679'
@@ -89,7 +89,7 @@ Capabilities {}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Timed out waiting for driver server to start.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:54:15.039Z'
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'SUGUNADEVI', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
 Driver info: driver.version: unknown
 Build info: version: '4.0.0', revision: '3a21814679'
@@ -106,7 +106,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:246)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:168)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:146)
-at Google.setup(Google.java:29)
+at Google.setup(Google.java:22)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,7 +141,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleSearch -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-17T18:16:45 IST" name="close" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1637153205812" status="SKIP">
+        <test-method is-config="true" signature="close()[pri:0, instance:Google@3cc2931c]" started-at="2021-11-18T14:07:25 IST" name="close" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1637224645768" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

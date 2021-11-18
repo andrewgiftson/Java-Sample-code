@@ -12,8 +12,9 @@ jobs:
     # Be sure to update the Docker image tag below to openjdk version of your application.
     # A list of available CircleCI Docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
-      - image: cimg/openjdk:11.0
-      - image: selenium/standalone-chrome:3.11.0
+#      - image: cimg/openjdk:11.0
+      - image: circleci/openjdk:11.0-jdk-browsers
+#      - image: selenium/chrome:3.11.0
 
 
 
@@ -30,18 +31,20 @@ jobs:
       - run:
           name: Resolve Maven Dependencies
           command: mvn dependency:go-offline
-
       - run:
-          name: create docker network
-          command: docker network create grid
-
-      - run:
-                name: install selenium-hub
-                command: docker run -d --rm -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.11.0
-
-      - run:
-                name: install selenium-node
-                command: docker run -d --rm --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0
+          name: Get chrome version
+          command: google-chrome --version
+#      - run:
+#          name: create docker network
+#          command: docker network create grid
+#
+#      - run:
+#                name: install selenium-hub
+#                command: docker run -d --rm -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.11.0
+#
+#      - run:
+#                name: install selenium-node
+#                command: docker run -d --rm --net grid -e HUB_HOST=selenium-hub -v /dev/shm:/dev/shm selenium/node-chrome:3.11.0
       # run tests!
       - run:
           name: Run Tests
